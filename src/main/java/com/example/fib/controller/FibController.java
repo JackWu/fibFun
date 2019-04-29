@@ -1,5 +1,7 @@
 package com.example.fib.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +22,7 @@ public class FibController {
 	FibService fibService;
 	
     @GetMapping("/get/fib/{nNumber}")
-    public String getFib(@PathVariable("nNumber") int nNumber) {
+    public Map<String, String> getFib(@PathVariable("nNumber") int nNumber) {
     	
         return fibService.getFibValue(nNumber);
     }

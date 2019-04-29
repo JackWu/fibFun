@@ -3,7 +3,9 @@ package com.example.fib.service;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -42,17 +44,29 @@ public class FibService {
 	  
 	    } 
 	   
-	   public String getFibValue(int n) {
+	   public Map<String, String> getFibValue(int n) {
 		   
+		   Map<String, String> ret = new HashMap<String, String>();
 		   
-		   if(n >=15678)
-			   return n+"'s result is too big to be handled by Java BigInteger type";
+		   if(n >=15678) {
+			   ret.put("code", "1111");
+		   	   ret.put("msg", n+"'s result is too big to be handled by Java BigInteger type");
+			   return ret;
+		   }
 		   
-		   if(bigIntFibList == null)
-			   return "Something is wrong with precomputed fib array";
+		   if(bigIntFibList == null) {
+
+			   ret.put("status", "error");
+			   ret.put("code", "2222");
+		   	   ret.put("msg",  "Something is wrong with precomputed fib array");
+		   	   return ret;
+		   }
 		   
-		   
-		   return bigIntFibList.get(n).toString();
+		   ret.put("status", "success");
+		   ret.put("code", "3333");
+		   ret.put("msg", "");
+		   ret.put("data", bigIntFibList.get(n).toString());
+		   return ret;
 	   }
 	
 }
