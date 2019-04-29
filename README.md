@@ -7,6 +7,6 @@
  Computing all Fib number up to 15677 takes 22ms on the first time, 7-9ms rest of the time. <br>
     <ul><li>a. I precompute all fib number up to 15677 on application startup and store it in an umodifiable list. </li>
     <li>This approach has no foreseeable concerns on <ul>
-       <li>i. concurrent issues: The write operation will only performance once at the application initialization. </li>
+       <li>i. concurrent issues: The write operation will only perform once at the application initialization. </li>
        <li>ii. performance issues: every query the clients request will consume O(1) constant time. </li></ul></li></ul>
  </li></ul>
