@@ -1,6 +1,9 @@
 package com.example.fib.service;
 
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
@@ -13,7 +16,7 @@ public class FibService {
 
 	private static final Logger log = LoggerFactory.getLogger(FibService.class);
 
-	   BigInteger[] bigIntFibRet = new BigInteger[15677+2];
+	    List<BigInteger> bigIntFibList = null;;
 	    @PostConstruct
 	    private void init() {
 	        log.info("AppInitializator initialization logic ...");
@@ -24,7 +27,7 @@ public class FibService {
 	   private void buildFibData() 
 	    { 
 		   
-		   
+		   BigInteger[] bigIntFibRet = new BigInteger[15677+2];
 	        
 		   bigIntFibRet[0]=BigInteger.valueOf(0);
 		   bigIntFibRet[1]=BigInteger.valueOf(1);
@@ -34,6 +37,8 @@ public class FibService {
 	        { 
 	        	bigIntFibRet[j] =  bigIntFibRet[j-1].add(bigIntFibRet[j-2]); 
 	        } 
+	        
+	        bigIntFibList = Collections.unmodifiableList(Arrays.asList(bigIntFibRet));
 	  
 	    } 
 	   
@@ -43,7 +48,11 @@ public class FibService {
 		   if(n >=15678)
 			   return n+"'s result is too big to be handled by Java BigInteger type";
 		   
-		   return bigIntFibRet[n].toString();
+		   if(bigIntFibList == null)
+			   return "Something is wrong with precomputed fib array";
+		   
+		   
+		   return bigIntFibList.get(n).toString();
 	   }
 	
 }
