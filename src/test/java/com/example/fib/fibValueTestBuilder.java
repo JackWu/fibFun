@@ -6,12 +6,18 @@ public class fibValueTestBuilder {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        int n = 15678; 
+        int n = 15677; 
         
-        long startTime = System.currentTimeMillis();
-        BigInteger ret = fib4(n); 
-        long endTime = System.currentTimeMillis();
-        System.out.println("time: " + (endTime - startTime) + " Rresult: " + ret);
+    	averageRunningTime(n);
+	}
+	
+	public static void averageRunningTime(int n){
+		for(int i = 0; i < 100; i++){
+	        long startTime = System.currentTimeMillis();
+	        BigInteger ret = fib4(n); 
+	        long endTime = System.currentTimeMillis();
+	        System.out.println("time: " + (endTime - startTime) + "ms. Result: " + ret);
+		}
 	}
 	
 	
