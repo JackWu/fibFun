@@ -9,4 +9,9 @@
     <li>This approach has no foreseeable concerns on <ul>
        <li>i. concurrent issues: The write operation will only perform once at the application initialization. </li>
        <li>ii. performance issues: every query the clients request will consume O(1) constant time. </li></ul></li></ul>
- </li></ul>
+ </li>
+<li>Created a simple security layer using basic authentication. (Would have used OAuth2 if time permits)
+    <ul><li>admin role: admin/password</li>
+        <li>user role: user/password</li>
+    </ul></li>
+</ul>
