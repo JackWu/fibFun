@@ -26,8 +26,8 @@ public class FibController {
     	
         return fibService.getFibValue(nNumber);
     }
-    @GetMapping("/refresh/fib")
-    public String refreshFib() {
+    @GetMapping("/admin/access")
+    public String adminAccess() {
     	
         return "admin access";
     }

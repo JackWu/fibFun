@@ -32,7 +32,7 @@ public class BasicSecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/v1/get/fib/**").hasAnyRole("USER", "ADMIN")
-                .antMatchers(HttpMethod.GET, "/api/v1/refresh/fib").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/api/v1/admin/access").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
