@@ -18,7 +18,6 @@
         </ul>
     </li>
     <li>This approach seperates reads and writes. It's like CQRS pattern (Command Query Responsibility Segregation) </li>
-
     <li>Created a simple security layer using basic authentication. (Would have used OAuth2 if time permits)
         <ul>
             <li>admin role: admin/password</li>
