@@ -8,7 +8,12 @@
     <ul><li>a. I precompute all fib number up to 15677 on application startup and store it in an umodifiable list. </li>
     <li>This approach has no foreseeable concerns on <ul>
        <li>i. concurrent issues: The write operation will only perform once at the application initialization. </li>
-       <li>ii. performance issues: every query the clients request will consume O(1) constant time. </li></ul></li></ul>
+       <li>ii. performance issues: every query the clients request will consume O(1) constant time. </li>
+       </ul>
+     </li>
+        <li>This approach seperates reads and writes. It's like CQRS pattern (Command Query Responsibility Segregation) </li>
+     
+     </ul>
  </li>
 <li>Created a simple security layer using basic authentication. (Would have used OAuth2 if time permits)
     <ul><li>admin role: admin/password</li>
